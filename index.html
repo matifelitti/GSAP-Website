@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wildlife 3D Safari</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- GSAP + ScrollTrigger (deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <!-- Script -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <div class="brand">Wildlife<span class="dot">●</span>Safari</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a role="menuitem" href="#home">Home</a></li>
+                <li role="none"><a role="menuitem" href="#gallery">Gallery</a></li>
+                <li role="none"><a role="menuitem" href="#conservation">Conservation</a></li>
+                <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta" id="tourBtn">Book a Tour</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <div class="hero-inner container">
+                <div class="hero-left">
+                    <h1 class="huge">Discover wildlife in 3D — up close and immersive</h1>
+                    <p class="lead">Explore curated animal photography, interactive 3D cards and stories from the wild.
+                        Responsive, accessible and animated with GSAP.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#gallery">Explore Gallery</a>
+                        <a class="btn btn-ghost" href="#conservation">Our Mission</a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="card-3d" data-tilt aria-hidden="true">
+                        <div class="card-layers">
+                            <img class="layer base" src="lion.jpg" alt="Lion close-up" />
+                            <img class="layer mid" src="lion.jpg" alt="" />
+                        </div>
+                        <div class="card-caption">
+                            <h3>African Lion</h3>
+                            <p>King of the savannah — see texture and depth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Featured Animals</h2>
+                <p class="section-desc">A selection of animals modeled as interactive 3D cards. Hover or focus to feel
+                    depth.</p>
+
+                <div class="grid">
+                    <!-- Card 1 -->
+                    <article class="artifact" tabindex="0" aria-labelledby="a1t">
+                        <div class="artifact-card" data-index="1">
+                            <img src="elephant.jpg" alt="Elephant portrait" />
+                            <div class="artifact-meta">
+                                <h3 id="a1t">African Elephant</h3>
+                                <p>Gentle giants with incredible memory and social bonds.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="artifact" tabindex="0" aria-labelledby="a2t">
+                        <div class="artifact-card" data-index="2">
+                            <img src="bengal tiger.jpg" alt="Tiger in grass" />
+                            <div class="artifact-meta">
+                                <h3 id="a2t">Bengal Tiger</h3>
+                                <p>Powerful and solitary; an apex predator of the forest.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="artifact" tabindex="0" aria-labelledby="a3t">
+                        <div class="artifact-card" data-index="3">
+                            <img src="sea turtle.jpg" alt="Sea turtle swimming" />
+                            <div class="artifact-meta">
+                                <h3 id="a3t">Sea Turtle</h3>
+                                <p>Ancient swimmers — vital to healthy ocean ecosystems.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="artifact" tabindex="0" aria-labelledby="a4t">
+                        <div class="artifact-card" data-index="4">
+                            <img src="macaw.jpg" alt="Colorful macaw bird" />
+                            <div class="artifact-meta">
+                                <h3 id="a4t">Macaw</h3>
+                                <p>Vibrant rainforest avian — loud, social and intelligent.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSERVATION / ABOUT -->
+        <section id="conservation" class="about">
+            <div class="container about-inner">
+                <div class="about-text">
+                    <h2 class="section-title">Our Conservation Mission</h2>
+                    <p>Wildlife 3D Safari raises awareness through immersive storytelling. We partner with conservation
+                        groups, support habitat protection and promote sustainable tourism.</p>
+                    <ul class="benefits">
+                        <li>Support local rangers</li>
+                        <li>Fund habitat restoration</li>
+                        <li>Educate next generation</li>
+                    </ul>
+                </div>
+
+                <div class="about-visual">
+                    <div class="globe" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get Involved</h2>
+                <form class="contact-form" action="#" onsubmit="return false;">
+                    <label>
+                        <span class="label">Name</span>
+                        <input type="text" name="name" required />
+                    </label>
+
+                    <label>
+                        <span class="label">Email</span>
+                        <input type="email" name="email" required />
+                    </label>
+
+                    <label class="full">
+                        <span class="label">Message</span>
+                        <textarea name="message" rows="4" placeholder="Tell us how you'd like to help"></textarea>
+                    </label>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                        <button class="btn btn-ghost" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© <span id="year"></span> Wildlife Safari — All rights reserved.</div>
+    </footer>
+</body>
+
+</html>

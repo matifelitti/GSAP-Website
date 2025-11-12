@@ -1,0 +1,337 @@
+:root {
+  --bg: #071018;
+  --card: #0d1620;
+  --muted: #9db0c4;
+  --accent: #00c2a8;
+  --accent-2: #ffd166;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 1rem;
+  --container: 64rem;
+  --flow: 1.25rem;
+  --max-width: 64rem;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  font-size: 1rem;
+  line-height: 1.45;
+  background: linear-gradient(180deg, var(--bg), #041020 70%);
+  color: #ecf6f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header / Nav */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: linear-gradient(180deg, rgba(2, 6, 10, 0.25), transparent);
+  backdrop-filter: blur(6px);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--accent);
+  letter-spacing: 0.06rem;
+}
+.brand .dot {
+  color: var(--accent-2);
+  margin-left: 0.4rem;
+  font-size: 0.9rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+}
+.nav-links a:focus,
+.nav-links a:hover {
+  color: #fff;
+  outline: none;
+}
+
+/* CTA button */
+.cta {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* HERO */
+.hero {
+  padding: 6rem 0 3.5rem 0;
+}
+.hero-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.hero-left {
+  flex: 1;
+}
+.huge {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+}
+.lead {
+  color: var(--muted);
+  margin: 0 0 1.5rem 0;
+  font-size: 1.125rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 800;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #012;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.5);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+}
+
+/* 3D card in hero */
+.hero-right {
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+}
+.card-3d {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 1.2rem 2.5rem rgba(1, 6, 10, 0.6);
+}
+.card-layers {
+  position: relative;
+  display: block;
+  height: 20rem;
+}
+.card-layers img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-layers img.mid {
+  transform: translateZ(-60px) scale(1.06);
+  opacity: 0.85;
+}
+.card-caption {
+  padding: 1rem;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35));
+  position: relative;
+}
+.card-caption h3 {
+  margin: 0 0 0.25rem 0;
+}
+.card-caption p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Gallery */
+.gallery {
+  padding: 3.5rem 0;
+}
+.section-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+}
+.section-desc {
+  color: var(--muted);
+  margin: 0 0 1rem 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.25rem;
+}
+
+/* Artifact cards */
+.artifact {
+  outline: none;
+}
+.artifact-card {
+  background: var(--card);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 900px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0.9rem 1.8rem rgba(0, 0, 0, 0.55);
+  transition: transform 0.2s ease;
+}
+.artifact-card img {
+  display: block;
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+}
+.artifact-meta {
+  padding: 1rem;
+}
+.artifact-meta h3 {
+  margin: 0 0 0.35rem 0;
+}
+.artifact-meta p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.artifact:focus .artifact-card,
+.artifact-card:hover {
+  transform: translateY(-0.6rem) rotateX(2deg) translateZ(8px);
+}
+
+/* ABOUT / Conservation */
+.about {
+  padding: 3.5rem 0;
+}
+.about-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.about-text {
+  flex: 1;
+}
+.benefits {
+  margin: 1rem 0 0 1rem;
+  padding: 0;
+  color: var(--muted);
+}
+.benefits li {
+  margin-bottom: 0.5rem;
+}
+
+/* globe visual */
+.about-visual {
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+}
+.globe {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent), #062028 40%);
+  box-shadow: 0 0 4rem rgba(0, 194, 168, 0.06),
+    inset 0 -1rem 2rem rgba(0, 0, 0, 0.5);
+  transform: translateZ(40px);
+}
+
+/* Contact */
+.contact {
+  padding: 3.5rem 0;
+}
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+input,
+textarea {
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: inherit;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Accessibility / reduced motion */
+.reduced-motion * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Responsive */
+@media (max-width: 64rem) {
+  .hero-inner {
+    flex-direction: column;
+  }
+  .hero-right {
+    width: 100%;
+  }
+  .about-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
