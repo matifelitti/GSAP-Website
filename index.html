@@ -166,29 +166,28 @@
         </section>
 
         <!-- CONTACT -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get Involved</h2>
-                <form class="contact-form" action="#" onsubmit="return false;">
-                    <label>
-                        <span class="label">Name</span>
-                        <input type="text" name="name" required />
-                    </label>
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <h2 class="contact-title">Get in Touch</h2>
+                <p class="contact-subtitle">Feel free to reach out — I usually respond in a few hours.</p>
 
-                    <label>
-                        <span class="label">Email</span>
-                        <input type="email" name="email" required />
-                    </label>
-
-                    <label class="full">
-                        <span class="label">Message</span>
-                        <textarea name="message" rows="4" placeholder="Tell us how you'd like to help"></textarea>
-                    </label>
-
-                    <div class="form-actions">
-                        <button class="btn btn-primary" type="submit">Send</button>
-                        <button class="btn btn-ghost" type="reset">Reset</button>
+                <form class="contact-form" id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="name" required />
+                        <label for="name">Your Name</label>
                     </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" required />
+                        <label for="email">Email Address</label>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" rows="4" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+
+                    <button type="submit" class="send-btn">Send Message</button>
                 </form>
             </div>
         </section>

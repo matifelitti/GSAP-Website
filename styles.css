@@ -283,37 +283,102 @@ body {
 }
 
 /* Contact */
-.contact {
-  padding: 3.5rem 0;
-}
-.contact-form {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
-  align-items: start;
-}
-.contact-form label {
+.contact-section {
+  width: 100%;
+  padding: 5rem 1.5rem;
   display: flex;
-  flex-direction: column;
-}
-.label {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-input,
-textarea {
-  padding: 0.75rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-  color: inherit;
+  justify-content: center;
+  background: #0f172a;
 }
 
-/* Form actions */
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Input groups */
+.input-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid #475569;
+  color: #fff;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #60a5fa;
+}
+
+.input-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1rem;
+  color: #9ca3af;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+/* Floating label */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -0.7rem;
+  left: 0.8rem;
+  background: #0f172a;
+  padding: 0 0.25rem;
+  color: #60a5fa;
+  font-size: 0.8rem;
+}
+
+/* Button */
+.send-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background: transparent;
+  border: 2px solid #60a5fa;
+  border-radius: 0.75rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.send-btn:hover {
+  background: #60a5fa;
+  box-shadow: 0 0 18px #60a5fa;
 }
 
 /* Footer */
